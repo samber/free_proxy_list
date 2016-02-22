@@ -29,7 +29,7 @@ function push {
     git pull
     git add list.txt list.fastest-*.txt
     git commit -m `date --rfc-3339=seconds`
-    git push
+    git push -f
 }
 
 
