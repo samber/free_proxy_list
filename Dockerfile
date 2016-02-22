@@ -2,9 +2,7 @@
 FROM debian:latest
 MAINTAINER contact@samuel-berthe.fr
 
-RUN apt-get update && apt-get install -y git python2 python-setuptools
-
-RUN pip install urllib2
+RUN apt-get update && apt-get install -y cron git python python-setuptools python-pip
 
 # Add crontab file in the cron directory
 ADD schedule /etc/cron.d/schedule
@@ -17,6 +15,6 @@ RUN chmod 0644 /etc/cron.d/schedule
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+CMD cron && crontab /root/repo/schedule && tail -f /var/log/cron.log
 
 RUN mkdir /root/.ssh

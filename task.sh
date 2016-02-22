@@ -26,7 +26,6 @@ function push {
     touch /root/.ssh/known_hosts
     ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
-    git pull
     git add list.txt list.fastest-*.txt
     git commit -m `date --rfc-3339=seconds`
     git push -f
