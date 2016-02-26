@@ -26,8 +26,8 @@ function push {
     touch /root/.ssh/known_hosts
     ssh-keyscan github.com >> /root/.ssh/known_hosts
 
-    git add list.txt list.fastest-*.txt
-    git commit -m `date --rfc-3339=seconds`
+    git add list.txt list.*.txt
+    git commit -m "`date --rfc-3339=seconds`"
     git push -f
 }
 
