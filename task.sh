@@ -24,7 +24,7 @@ function wait_jobs_over {
 function push {
     rm -f /root/.ssh/known_hosts
     touch /root/.ssh/known_hosts
-    ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
+    ssh-keyscan github.com >> /root/.ssh/known_hosts
 
     git add list.txt list.fastest-*.txt
     git commit -m `date --rfc-3339=seconds`

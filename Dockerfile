@@ -2,7 +2,7 @@
 FROM debian:latest
 MAINTAINER contact@samuel-berthe.fr
 
-RUN apt-get update && apt-get install -y cron git python python-setuptools python-pip
+RUN apt-get update && apt-get install -y cron git python python-setuptools python-pip curl
 
 # Add crontab file in the cron directory
 ADD schedule /etc/cron.d/schedule
