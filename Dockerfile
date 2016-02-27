@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y cron git python python-setuptools pytho
 
 # Add crontab file in the cron directory
 ADD schedule /etc/cron.d/schedule
-ADD . /root/repo
 
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/schedule
@@ -15,6 +14,7 @@ RUN chmod 0644 /etc/cron.d/schedule
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD cron && crontab /root/repo/schedule && tail -f /var/log/cron.log
+CMD cron && tail -f /var/log/cron.log
 
 RUN mkdir /root/.ssh
+ADD . /root/repo

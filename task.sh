@@ -22,6 +22,9 @@ function wait_jobs_over {
 }
 
 function push {
+    git config --global user.name "Samuel BERTHE"
+    git config --global user.email "contact@samuel-berthe.fr"
+
     rm -f /root/.ssh/known_hosts
     touch /root/.ssh/known_hosts
     ssh-keyscan github.com >> /root/.ssh/known_hosts
@@ -32,6 +35,7 @@ function push {
 }
 
 
+echo "Start filtering proxies"
 
 clean_up
 download_list
