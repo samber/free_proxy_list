@@ -1,7 +1,7 @@
 <hr><center>nginx</center>
-</html>
-<body
 <html>
-</body>
+<body
 <center><h1>403
+</body>
+</html>
 <head><title>403
